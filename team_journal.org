@@ -1,0 +1,11 @@
+* Calendar
+** 17-10-2026
+*** Konstantinos
+**** Created team journal.
+**** Created bin/main.c and started splitting parallelQuicksort.c 
+     to more files so as to create a more cohesive code structure.
+**** TODO Libraries that will be used by all/most .c files should remain
+     in the header. Libraries that are exclusive to one or two files
+     only should be removed.
+**** There could possibly be a problem with parallelization for MacOS,
+     it hasn't presented yet but I faced it in similar projects.
