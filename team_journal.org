@@ -9,3 +9,10 @@
      only should be removed.
 **** There could possibly be a problem with parallelization for MacOS,
      it hasn't presented yet but I faced it in similar projects.
+** 29-10-2026
+*** Konstantinos
+**** Updating the bash script.
+**** Ensuring cross platform compatibility.
+**** For MACOS: Do `brew install coreutils` for `shuf` command.
+**** For Linux: Do `sudo apt install coreutils` for the same reason.
+
