@@ -15,4 +15,13 @@
 **** Ensuring cross platform compatibility.
 **** For MACOS: Do `brew install coreutils` for `shuf` command.
 **** For Linux: Do `sudo apt install coreutils` for the same reason.
-
+**** For Windows:
+     - Do `winget install -e --id Microsoft.Coreutils` for the `shuf` command.
+     - Download wsl (open terminal, type wsl and download it)
+     - After downloading wsl, do `wsl.exe --install ubuntu`
+     - Now every time you type wsl in the windows terminal, an ubuntu emulator will
+       run.
+     - In ubuntu, do: sudo apt update && sudo apt upgrade && sudo apt install build-essential
+     - Now proceed like you are in Linux.
+**** The new command for the bashscript is './run_benchmarking NUMBER', where number is the
+     number of iterations.

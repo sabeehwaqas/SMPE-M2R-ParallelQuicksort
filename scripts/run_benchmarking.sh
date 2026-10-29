@@ -1,3 +1,5 @@
+#!/bin/bash
+
 OUTPUT_DIRECTORY=data/$(hostname)_$(date +%F)
 mkdir -p "$OUTPUT_DIRECTORY"
 OUTPUT_FILE=$OUTPUT_DIRECTORY/measurements_$(date +%R).txt
