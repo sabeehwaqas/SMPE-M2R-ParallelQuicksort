@@ -7,12 +7,25 @@
 #   perl csv_quicksort_extractor2.pl Machine_ID=file.txt [Machine_ID=file.txt ...] > master_measurements.csv
 #
 # Example:
-#   perl scripts/csv_quicksort_extractor2.pl \
-#       Mac_M1="data/host1_2026-11-02/measurements_10:15_30it.txt" \
-#       Mac_Intel="data/host2_2026-11-02/measurements_10:20_30it.txt" \
-#       Windows_WSL="data/host3_2026-11-02/measurements_10:30_30it.txt" \
-#       Linux="data/host4_2026-11-02/measurements_10:40_30it.txt" \
-#       > data/master_measurements.csv
+
+# perl scripts/csv_quicksort_extractor2.pl \
+# Mac_M1="data/Ahnafs-MacBook-Air-2.local_2026-10-31/measurements_15:16_25it.txt" \
+# Mac_M1="data/Ahnafs-MacBook-Air-2.local_2026-10-31/measurements_15:20_50it.txt" \
+# Mac_M1="data/Ahnafs-MacBook-Air-2.local_2026-10-31/measurements_15:24_100it.txt" \
+# Mac_M4="data/Muhammads-MacBook-Air.local_2026-10-31/measurements_15:08_25it.txt" \
+# Mac_M4="data/Muhammads-MacBook-Air.local_2026-10-31/measurements_15:10_50it.txt" \
+# Mac_M4="data/Muhammads-MacBook-Air.local_2026-10-31/measurements_15:14_100it.txt" \
+# Linux_Xeon="data/saimaa_2026-10-31/measurements_14:52_25it.txt" \
+# Linux_Xeon="data/saimaa_2026-10-31/measurements_14:59_50it.txt" \
+# Linux_Xeon="data/saimaa_2026-10-31/measurements_15:06_100it.txt" \
+# Windows="data/Konstantinos-Windows.local_2026-10-31/measurements_17:13_25.txt" \
+# Windows="data/Konstantinos-Windows.local_2026-10-31/measurements_17:15_50.txt" \
+# Windows="data/Konstantinos-Windows.local_2026-10-31/measurements_17:18_100.txt" \
+# Mac_M4_Pro="data/Konstantinos-MacBook-Pro.local_2026-10-31/measurements_17:14_25.txt" \
+# Mac_M4_Pro="data/Konstantinos-MacBook-Pro.local_2026-10-31/measurements_17:15_25.txt" \
+# Mac_M4_Pro="data/Konstantinos-MacBook-Pro.local_2026-10-31/measurements_17:18_25.txt" \
+# > data/master_measurements.csv
+
 #
 # The same Machine_ID may be given several times (several files for one machine).
 
