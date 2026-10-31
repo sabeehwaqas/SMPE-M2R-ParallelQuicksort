@@ -9,3 +9,22 @@
      only should be removed.
 **** There could possibly be a problem with parallelization for MacOS,
      it hasn't presented yet but I faced it in similar projects.
+** 29-10-2026
+*** Konstantinos
+**** Updating the bash script.
+**** Ensuring cross platform compatibility.
+**** For MACOS: Do `brew install coreutils` for `shuf` command.
+**** For Linux: Do `sudo apt install coreutils` for the same reason.
+**** For Windows:
+     - Do `winget install -e --id Microsoft.Coreutils` for the `shuf` command.
+     - Download wsl (open terminal, type wsl and download it)
+     - After downloading wsl, do `wsl.exe --install ubuntu`
+     - Now every time you type wsl in the windows terminal, an ubuntu emulator will
+       run.
+     - In ubuntu, do: sudo apt update && sudo apt upgrade && sudo apt install build-essential
+     - Now proceed like you are in Linux.
+**** The new command for the bashscript is './run_benchmarking NUMBER', where number is the
+     number of iterations.
+**** Added a message containing system info before the benchmarking results.
+**** TODO All of the above are tested in MACOS and WINDOWS systems and seem to be working.
+     Testing is needed for linux systems.
