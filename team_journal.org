@@ -33,3 +33,15 @@
 *** Sabeeh
 **** updated bask script to easier to run i.e auto file iteration renaming, auto save in data folder, new txt file every run
 **** Executed the run_benchmarking.sh on MacOS 3 times with 30,50,200 iteration and saved the files in data
+*** Data pipeline and parsing 
+- Modified =scripts/csv_quicksort_extractor2.pl= so it takes several raw
+  files as =Machine_ID=file.txt= pairs and writes one wide CSV
+  (=Machine_ID,Size,Seq,Par,Libc=, one row per run) to stdout.
+- Parses Sequential, Parallel and Built-in (libc =qsort=) times. It handles
+  CRLF line endings and skips incomplete runs with a warning.
+- Tested on the Apple M4 data (30/50/100 iterations): 720 rows, matching
+  (30+50+100) x 4 sizes.
+- Only the Mac folder is in the repo so far. =master_measurements.csv= still
+  needs to be built once the other three laptops' folders are pushed.
+- Open point: agree on Machine_ID naming (=Mac_M4=, =Mac_Intel=,
+  =Windows_WSL=, ...) before Member 3 starts plotting.
