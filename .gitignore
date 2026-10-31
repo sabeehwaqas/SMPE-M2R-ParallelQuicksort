@@ -35,3 +35,6 @@ journal.tex
 *.x86_64
 *.hex
 bin/quicksort
+
+#MAC
+.DS_Store
