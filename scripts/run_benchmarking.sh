@@ -40,7 +40,7 @@ touch "$OUTPUT_FILE"
 } >>"$OUTPUT_FILE"
 
 #Make a sizes array in order to better manipulate them.
-sizes=(100 1000 10000 50000) # 100000 500000 1000000 5000000
+sizes=(1000 5000 10000 50000 100000 500000 1000000 5000000) # 100000 500000 1000000 5000000
 
 #Make an array that contains all the sizes randomly shuffled,
 #to prevent bias from throttling.
