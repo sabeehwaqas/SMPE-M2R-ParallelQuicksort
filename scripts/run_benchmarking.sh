@@ -1,8 +1,23 @@
 #!/bin/bash
 
-OUTPUT_DIRECTORY=data/$(hostname)_$(date +%F)
+reps=${1:?"Usage: $0 <iterations>"}
+
+# Resolve paths relative to this script, so it works from any directory.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_DIR="$(dirname "$SCRIPT_DIR")"
+
+# Output goes in <repo>/data (one folder above scripts/), not scripts/data.
+OUTPUT_DIRECTORY="$ROOT_DIR/data/$(hostname)_$(date +%F)"
 mkdir -p "$OUTPUT_DIRECTORY"
-OUTPUT_FILE=$OUTPUT_DIRECTORY/measurements_$(date +%R).txt
+
+# Same minute => unique file (never append): add a counter before the _<reps>it suffix.
+base="$OUTPUT_DIRECTORY/measurements_$(date +%R)"
+OUTPUT_FILE="${base}_${reps}it.txt"
+n=2
+while [ -e "$OUTPUT_FILE" ]; do
+    OUTPUT_FILE="${base}_${n}_${reps}it.txt"
+    n=$((n + 1))
+done
 
 touch "$OUTPUT_FILE"
 
@@ -30,7 +45,6 @@ sizes=(100 1000 10000 50000) # 100000 500000 1000000 5000000
 #Make an array that contains all the sizes randomly shuffled,
 #to prevent bias from throttling.
 
-reps=$1
 all_runs=()
 
 for size in "${sizes[@]}"; do
@@ -42,5 +56,5 @@ done
 #Run loop for all sizes (that exist reps times).
 for i in $(printf "%s\n" "${all_runs[@]}" | shuf); do
     echo "Size: $i" >>"$OUTPUT_FILE"
-    ./../bin/quicksort "$i" >>"$OUTPUT_FILE"
+    "$ROOT_DIR/bin/quicksort" "$i" >>"$OUTPUT_FILE"
 done
