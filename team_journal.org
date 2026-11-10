@@ -4,9 +4,9 @@
 **** Created team journal.
 **** Created bin/main.c and started splitting parallelQuicksort.c 
      to more files so as to create a more cohesive code structure.
-**** TODO Libraries that will be used by all/most .c files should remain
-     in the header. Libraries that are exclusive to one or two files
-     only should be removed.
+**** CANCELLED +Libraries that will be used by all/most .c files should remain+
+     +in the header. Libraries that are exclusive to one or two files+
+     +only should be removed.+
 **** There could possibly be a problem with parallelization for MacOS,
      it hasn't presented yet but I faced it in similar projects.
 ** 29-10-2026
@@ -26,7 +26,8 @@
 **** The new command for the bashscript is './run_benchmarking NUMBER', where number is the
      number of iterations.
 **** Added a message containing system info before the benchmarking results.
-**** TODO All of the above are tested in MACOS and WINDOWS systems and seem to be working.
+**** DONE All of the above are tested in MACOS and WINDOWS systems and seem to be working.
+     CLOSED: [2026-11-10 Tue 15:37]
      Testing is needed for linux systems.
 
 ** 31-10-2026
@@ -46,6 +47,7 @@
 - Open point: agree on Machine_ID naming (=Mac_M4=, =Mac_Intel=,
   =Windows_WSL=, ...) before Member 3 starts plotting.
 
+
 *** Farhan (Team Member 3)
 **** Executed the benchmarking pipeline on two vastly different hardware architectures: Apple Silicon (Mac M1) and an Enterprise Server (Linux Xeon).
 **** To guarantee statistical rigor and mitigate system noise like thermal throttling or OS background tasks, executed highly redundant tiered runs of 25, 50, and 100 iterations.
@@ -60,3 +62,4 @@
 **** Authored the comprehensive REPORT.md. Critically analyzed the hardware-dependent nature of the parallel implementation and evaluated the checklist criteria for standard scientific graphics.
 **** Successfully debunked the baseline 400,000 element crossover claim for server architectures. Attributed the catastrophic performance degradation on the Linux Xeon to operating system thread-management overhead across complex server memory zones.
 **** Finalized the repository state by staging the source R scripts, the high-resolution PNG plots, and the Markdown report. Committed and pushed to the final-analysis branch and opened the project's concluding Pull Request.
+
