@@ -45,7 +45,7 @@
   Mac_M4, Mac_M4_Pro, Windows, Linux_Xeon): 25, 50 and 100 iterations
   at 8 array sizes, so 1,400 rows per machine and 7,000 in total.
 ** 1-11-2026
-- Problems found and fixed: 
+*** Sabeeh: Problems found and fixed:
 - Ahnaf noticed the Mac_M4 facet in the plot reached about 4,000 s. I
   checked the raw file: five timings between 146 s and 5,289 s, each in
   only one of the three algorithms for that iteration. The extractor had
@@ -56,6 +56,5 @@
 - The first master CSV had only 200 rows for Mac_M4_Pro instead of 1,400,
   because only the 25-iteration file had been included (those file names
   have no =it= in them). I rebuilt the CSV with all three files.
-*** Result
 - The pushed master CSV is complete. Row counts and per-machine maximums
   match a fresh rebuild from the raw files.
