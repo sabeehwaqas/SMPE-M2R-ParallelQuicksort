@@ -4,9 +4,9 @@
 **** Created team journal.
 **** Created bin/main.c and started splitting parallelQuicksort.c 
      to more files so as to create a more cohesive code structure.
-**** TODO Libraries that will be used by all/most .c files should remain
-     in the header. Libraries that are exclusive to one or two files
-     only should be removed.
+**** CANCELLED +Libraries that will be used by all/most .c files should remain+
+     +in the header. Libraries that are exclusive to one or two files+
+     +only should be removed.+
 **** There could possibly be a problem with parallelization for MacOS,
      it hasn't presented yet but I faced it in similar projects.
 ** 29-10-2026
@@ -26,7 +26,8 @@
 **** The new command for the bashscript is './run_benchmarking NUMBER', where number is the
      number of iterations.
 **** Added a message containing system info before the benchmarking results.
-**** TODO All of the above are tested in MACOS and WINDOWS systems and seem to be working.
+**** DONE All of the above are tested in MACOS and WINDOWS systems and seem to be working.
+     CLOSED: [2026-11-10 Tue 15:37]
      Testing is needed for linux systems.
 
 ** 31-10-2026
