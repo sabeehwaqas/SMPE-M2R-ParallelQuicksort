@@ -1,7 +1,11 @@
 M2R-ParallelQuicksort
 =====================
 
-This small project aims at teaching 2nd year master students how to
-improve their experimental methodology.
+Done in Group of 3, 
+Group Members:
+- Konstantinos Bakos
+- Muhammad Sabeeh Waqas
+- Md Ahnaf Farhan
 
-The [journal](journal.org) contains all information and experimental reports.
+You can find the report in REPORT.md
+and the team notes in team_journel.org
