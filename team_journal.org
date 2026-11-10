@@ -63,3 +63,30 @@
 **** Successfully debunked the baseline 400,000 element crossover claim for server architectures. Attributed the catastrophic performance degradation on the Linux Xeon to operating system thread-management overhead across complex server memory zones.
 **** Finalized the repository state by staging the source R scripts, the high-resolution PNG plots, and the Markdown report. Committed and pushed to the final-analysis branch and opened the project's concluding Pull Request.
 
+*** Sabeeh: Data pipeline & parsing 
+- Changed =scripts/run_benchmarking.sh= so results are saved in =data/=
+  (one level above =scripts/=). A run in the same minute now gets its own
+  file instead of being appended to the old one, and the iteration count
+  is added to the end of the file name (e.g. =measurements_16:17_25it.txt=).
+- Rewrote =scripts/csv_quicksort_extractor2.pl= so it reads many raw
+  files in one run. Each file is given as =Machine_ID=file.txt=, and the
+  output is one CSV with the columns =Machine_ID,Size,Seq,Par,Libc=
+  (one row per run). It handles Windows line endings and skips
+  incomplete runs with a warning.
+- Built =data/master_measurements.csv= from all five machines (Mac_M1,
+  Mac_M4, Mac_M4_Pro, Windows, Linux_Xeon): 25, 50 and 100 iterations
+  at 8 array sizes, so 1,400 rows per machine and 7,000 in total.
+** 1-11-2026
+*** Sabeeh: Problems found and fixed:
+- Ahnaf noticed the Mac_M4 facet in the plot reached about 4,000 s. I
+  checked the raw file: five timings between 146 s and 5,289 s, each in
+  only one of the three algorithms for that iteration. The extractor had
+  copied them correctly, so it was not a parsing error. We think the
+  laptop was suspended or its clock jumped during the 100-iteration
+  batch. I re-ran the M4 batches, and the new data is clean (maximum
+  timing 1.3 s).
+- The first master CSV had only 200 rows for Mac_M4_Pro instead of 1,400,
+  because only the 25-iteration file had been included (those file names
+  have no =it= in them). I rebuilt the CSV with all three files.
+- The pushed master CSV is complete. Row counts and per-machine maximums
+  match a fresh rebuild from the raw files.
