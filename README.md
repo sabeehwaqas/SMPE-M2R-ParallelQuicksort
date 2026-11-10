@@ -7,5 +7,5 @@ Group Members:
 - Muhammad Sabeeh Waqas
 - Md Ahnaf Farhan
 
-You can find the report in REPORT.md
+You can find the final analysis report in REPORT.md
 and the team notes in team_journel.org
