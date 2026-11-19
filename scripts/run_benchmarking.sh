@@ -12,7 +12,9 @@ mkdir -p "$OUTPUT_DIRECTORY"
 
 # Same minute => unique file (never append): add a counter before the _<reps>it suffix.
 base="$OUTPUT_DIRECTORY/measurements_$(date +%R)"
+
 OUTPUT_FILE="${base}_${reps}it.txt"
+
 n=2
 while [ -e "$OUTPUT_FILE" ]; do
     OUTPUT_FILE="${base}_${n}_${reps}it.txt"
