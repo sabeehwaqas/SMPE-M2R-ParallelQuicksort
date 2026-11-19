@@ -31,10 +31,15 @@ touch "$OUTPUT_FILE"
         ;;
     Darwin*)
         sysctl -n machdep.cpu.brand_string
-        echo "RAM: $(($(sysctl -n hw.memsize) / 1024 ** 3)) GB"
+        echo "RAM: $(($(sysctl -n hw.memsize) / 1024 ** 3)) GiB"
         echo "Threads: $(sysctl -n hw.logicalcpu)"
         ;;
-    *MINGW* | *MSYS* | *CYGWIN*) powershell.exe -Command "(Get-CimInstance Win32_Processor).Name; 'RAM: ' + [math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,2).ToString() + ' GB'; 'Threads: ' + (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors" | tr -d '\r' ;;
+    *MINGW* | *MSYS* | *CYGWIN*)
+        powershell.exe -Command "\
+        (Get-CimInstance Win32_Processor).Name; \
+        'RAM: ' + [math]::Round((Get-CimInstance Win32_ComputerSystem).TotalPhysicalMemory/1GB,2).ToString() + ' GiB';\
+        'Threads: ' + (Get-CimInstance Win32_Processor).NumberOfLogicalProcessors" | tr -d '\r'
+        ;;
     esac
     echo "====="
 } >>"$OUTPUT_FILE"
